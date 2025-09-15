@@ -1,0 +1,189 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color palette to red and black theme for jersey e-commerce */
+  --background: oklch(0.08 0 0); /* Very dark background */
+  --foreground: oklch(0.98 0 0); /* White text */
+  --card: oklch(0.12 0.02 0); /* Dark card background */
+  --card-foreground: oklch(0.98 0 0); /* White card text */
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.55 0.22 25); /* Red primary color */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.18 0.02 0); /* Dark gray secondary */
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.15 0.01 0);
+  --muted-foreground: oklch(0.65 0.02 0);
+  --accent: oklch(0.65 0.15 45); /* Orange accent */
+  --accent-foreground: oklch(0.08 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.18 0.02 0);
+  --input: oklch(0.12 0.02 0);
+  --ring: oklch(0.55 0.22 25);
+  --chart-1: oklch(0.55 0.22 25);
+  --chart-2: oklch(0.65 0.15 45);
+  --chart-3: oklch(0.18 0.02 0);
+  --chart-4: oklch(0.98 0 0);
+  --chart-5: oklch(0.08 0 0);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.08 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.55 0.22 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.65 0.15 45);
+  --sidebar-accent-foreground: oklch(0.08 0 0);
+  --sidebar-border: oklch(0.18 0.02 0);
+  --sidebar-ring: oklch(0.55 0.22 25);
+}
+
+.dark {
+  /* Dark theme uses same colors as root for consistent dark experience */
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.12 0.02 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.55 0.22 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.18 0.02 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.15 0.01 0);
+  --muted-foreground: oklch(0.65 0.02 0);
+  --accent: oklch(0.65 0.15 45);
+  --accent-foreground: oklch(0.08 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.18 0.02 0);
+  --input: oklch(0.12 0.02 0);
+  --ring: oklch(0.55 0.22 25);
+  --chart-1: oklch(0.55 0.22 25);
+  --chart-2: oklch(0.65 0.15 45);
+  --chart-3: oklch(0.18 0.02 0);
+  --chart-4: oklch(0.98 0 0);
+  --chart-5: oklch(0.08 0 0);
+  --sidebar: oklch(0.08 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.55 0.22 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.65 0.15 45);
+  --sidebar-accent-foreground: oklch(0.08 0 0);
+  --sidebar-border: oklch(0.18 0.02 0);
+  --sidebar-ring: oklch(0.55 0.22 25);
+}
+
+@theme inline {
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Added dynamic gradient background */
+    background: linear-gradient(
+      135deg,
+      oklch(0.08 0 0) 0%,
+      oklch(0.12 0.05 15) 25%,
+      oklch(0.08 0 0) 50%,
+      oklch(0.1 0.03 10) 75%,
+      oklch(0.08 0 0) 100%
+    );
+    background-attachment: fixed;
+  }
+}
+
+/* Added custom animations for premium feel */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px oklch(0.55 0.22 25 / 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px oklch(0.55 0.22 25 / 0.8);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Adicionando estilos de hover para os botões do menu de login */
+.auth-btn {
+  @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  @apply bg-primary text-primary-foreground shadow hover:bg-primary/90; /* Cor normal do botão */
+}
+
+.auth-secondary-btn {
+  @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  @apply border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground; /* Cor normal do botão */
+}
+
+/* Estilos para os links dentro do menu de login */
+.auth-btn:hover,
+.auth-secondary-btn:hover {
+  @apply text-primary-foreground;
+}
+
+/* Estilo para os links dentro do menu de login/cadastro */
+.auth-link {
+  @apply text-muted-foreground transition-colors hover:text-primary;
+}

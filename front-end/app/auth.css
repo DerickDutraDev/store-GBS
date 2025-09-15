@@ -1,0 +1,125 @@
+/* Centraliza o conteúdo na tela */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+}
+
+/* Card de autenticação */
+.auth-card {
+  background: var(--card);
+  color: var(--card-foreground);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px 0 oklch(0.08 0 0 / 0.25);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeInUp 0.7s cubic-bezier(.4,2,.6,1) both;
+}
+
+/* Título */
+.auth-title {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Formulário */
+.auth-form label {
+  color: var(--card-foreground);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1.1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--input);
+  color: var(--foreground);
+  transition: border 0.2s;
+  outline: none;
+}
+
+.auth-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+/* Botão principal */
+.auth-btn {
+  width: 100%;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.7rem 0;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.auth-btn:hover {
+  background: oklch(0.55 0.22 25 / 0.85);
+}
+
+/* Link de alternância */
+.auth-link {
+  color: var(--primary);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.auth-link:hover {
+  color: var(--accent);
+}
+
+/* Texto secundário */
+.auth-secondary {
+  color: var(--muted-foreground);
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+}
+
+/* Botão secundário (ex: criar conta) */
+.auth-secondary-btn {
+  width: 100%;
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 0.7rem 0;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.auth-secondary-btn:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Nova classe para a logo */
+.auth-logo {
+  filter: contrast(1.1) brightness(1.2); /* Aumenta contraste e brilho */
+  border-radius: 50%; /* Deixa a logo redonda */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease-in-out;
+}
+
+.auth-logo:hover {
+  transform: scale(1.05) rotate(5deg); /* Efeito de zoom e rotação */
+}
